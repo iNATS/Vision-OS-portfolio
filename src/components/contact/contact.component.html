@@ -1,0 +1,20 @@
+<section id="contact" class="w-full max-w-5xl scroll-mt-24 opacity-0 animate-content-fade-in animation-delay-600">
+  <div class="p-8 sm:p-12 text-center bg-black/20 backdrop-blur-2xl border border-white/10 rounded-[28px] shadow-2xl shadow-black/40">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="text-4xl font-bold tracking-tight mb-4">Get in Touch</h2>
+      <p class="text-gray-400 mb-8">
+        I'm currently open to new opportunities and collaborations. Feel free to reach out.
+      </p>
+      <a href="mailto:alex.doe@example.com" class="inline-block mb-10 text-xl font-medium text-indigo-400 hover:text-indigo-300 transition-colors duration-300">
+        alex.doe@example.com
+      </a>
+      <div class="flex justify-center gap-6">
+        @for (social of socials(); track social.name) {
+          <a [href]="social.url" target="_blank" [attr.aria-label]="'Visit my ' + social.name" class="text-gray-400 hover:text-white transition-all duration-300 transform hover:scale-110">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 24 24" fill="currentColor" [innerHTML]="getSafeSvg(social.icon)"></svg>
+          </a>
+        }
+      </div>
+    </div>
+  </div>
+</section>

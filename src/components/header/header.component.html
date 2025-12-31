@@ -1,0 +1,15 @@
+<header class="fixed top-0 left-1/2 -translate-x-1/2 z-50 pt-6">
+  <div class="flex items-center justify-between gap-6 p-2 bg-neutral-900/40 backdrop-blur-2xl border border-white/10 rounded-full shadow-2xl shadow-black/40">
+      <a href="#" class="flex items-center space-x-2 pl-3">
+        <span class="text-lg font-bold tracking-tight bg-gradient-to-r from-gray-200 to-gray-400 text-transparent bg-clip-text">Alex Doe</span>
+      </a>
+      <nav class="flex items-center">
+        @for (link of navLinks(); track link.path) {
+          <a [href]="link.path" [attr.aria-label]="link.label" class="relative w-12 h-12 flex items-center justify-center text-gray-400 hover:text-white transition-colors duration-300 group">
+             <div class="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 rounded-full transition-opacity duration-300 scale-75 group-hover:scale-100"></div>
+             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 z-10" [innerHTML]="getSafeSvg(link.icon)"></svg>
+          </a>
+        }
+      </nav>
+  </div>
+</header>

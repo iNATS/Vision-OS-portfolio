@@ -1,0 +1,20 @@
+<section id="skills" class="w-full max-w-5xl scroll-mt-24 opacity-0 animate-content-fade-in animation-delay-400">
+  <div class="p-8 sm:p-12 bg-black/20 backdrop-blur-2xl border border-white/10 rounded-[28px] shadow-2xl shadow-black/40">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl font-bold tracking-tight">Skills & Technologies</h2>
+      <p class="text-gray-400 mt-2">The tools I use to bring ideas to life.</p>
+    </div>
+    <div class="max-w-4xl mx-auto">
+      <div class="flex flex-wrap justify-center gap-4">
+        @for (skill of skills(); track skill.name) {
+          <div class="group flex flex-col items-center justify-center gap-2 text-center w-28 h-28">
+            <div class="w-20 h-20 flex items-center justify-center bg-neutral-900/40 border border-white/10 rounded-2xl transition-all duration-300 group-hover:scale-110 group-hover:bg-neutral-800/60 group-hover:border-white/20">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-gray-300" viewBox="0 0 24 24" fill="currentColor" [innerHTML]="getSafeSvg(skill.icon)"></svg>
+            </div>
+            <span class="font-medium text-gray-300 text-sm transition-colors duration-300 group-hover:text-white">{{ skill.name }}</span>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>
